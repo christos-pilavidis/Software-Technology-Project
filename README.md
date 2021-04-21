@@ -1,1 +1,1 @@
-# Software-Technology-Project
+# Software-Technology-Project is an 8th semester project of the subject "Τεχνολογία Λογισμικού" (Software Technology).In this project we are given the challenge to show step by step the procedure of building a software development application with the purpose of cultivating teamwork and collaboration experience, as it is an important qualification of an engineer.
