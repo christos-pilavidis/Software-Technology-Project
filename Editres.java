@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Label;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JToolBar;
@@ -14,6 +16,8 @@ import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
 import java.awt.Scrollbar;
 import com.toedter.components.JSpinField;
@@ -86,13 +90,13 @@ public class Editres extends JFrame {
 		Button button_edit = new Button("Reserved Tables");
 		button_edit.setBackground(new Color(51, 51, 51));
 		button_edit.setFont(new Font("Calibri", Font.BOLD, 16));
-		button_edit.setBounds(607, 257, 229, 71);
+		button_edit.setBounds(607, 258, 213, 71);
 		contentPanel_edit.add(button_edit);
 		
 		Button button_edit_1 = new Button("Free Tables");
 		button_edit_1.setFont(new Font("Calibri", Font.BOLD, 16));
 		button_edit_1.setBackground(new Color(51, 51, 51));
-		button_edit_1.setBounds(607, 411, 229, 71);
+		button_edit_1.setBounds(607, 411, 213, 71);
 		contentPanel_edit.add(button_edit_1);
 		
 		Button button_edit_2 = new Button("Back");
@@ -100,6 +104,12 @@ public class Editres extends JFrame {
 		button_edit_2.setBackground(new Color(51, 51, 51));
 		button_edit_2.setBounds(10, 635, 98, 48);
 		contentPanel_edit.add(button_edit_2);
+		
+		JLabel logolbl1 = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/Logo.png")).getImage();
+		logolbl1.setIcon(new ImageIcon(img));
+		logolbl1.setBounds(20, 37, 191, 64);
+		contentPanel_edit.add(logolbl1);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
