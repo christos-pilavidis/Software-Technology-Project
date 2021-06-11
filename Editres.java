@@ -29,6 +29,8 @@ import com.toedter.calendar.JYearChooser;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JCalendar;
 import java.awt.Button;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Editres extends JFrame {
 
@@ -107,12 +109,25 @@ public class Editres extends JFrame {
 		contentPanel_edit.add(label_edit_2);
 		
 		Button button_edit = new Button("Reserved Tables");
+		button_edit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reserved_Tables restable = new Reserved_Tables();
+				restable.NewScreen();
+			}
+		});
 		button_edit.setBackground(new Color(51, 51, 51));
 		button_edit.setFont(new Font("Calibri", Font.BOLD, 16));
 		button_edit.setBounds(607, 258, 213, 71);
 		contentPanel_edit.add(button_edit);
 		
 		Button button_edit_1 = new Button("Free Tables");
+		button_edit_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Free_tables freetable = new Free_tables();
+				freetable.NewScreen();
+				
+			}
+		});
 		button_edit_1.setFont(new Font("Calibri", Font.BOLD, 16));
 		button_edit_1.setBackground(new Color(51, 51, 51));
 		button_edit_1.setBounds(607, 411, 213, 71);

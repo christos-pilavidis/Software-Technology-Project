@@ -17,7 +17,12 @@ import java.awt.Font;
 import java.awt.TextField;
 import javax.swing.border.LineBorder;
 import java.awt.Button;
-
+import com.toedter.components.JSpinField;
+import com.toedter.components.JLocaleChooser;
+import com.toedter.calendar.JDayChooser;
+import com.toedter.calendar.JYearChooser;
+import com.toedter.calendar.JMonthChooser;
+import com.toedter.calendar.JCalendar;
 import javax.swing.UIManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -170,6 +175,10 @@ public class createres extends JFrame {
 		contentPane.add(label_createres_5);
 		
 		Button back_button = new Button("Back");
+		back_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		back_button.setFont(new Font("Calibri", Font.BOLD, 13));
 		back_button.setForeground(Color.BLACK);
 		back_button.setBackground(Color.LIGHT_GRAY);
@@ -182,7 +191,11 @@ public class createres extends JFrame {
 		label.setBounds(98, 162, 159, 21);
 		contentPane.add(label);
 		
-	
+		JCalendar calendar = new JCalendar();
+		calendar.getYearChooser().getSpinner().setFont(new Font("Tahoma", Font.PLAIN, 10));
+		calendar.getMonthChooser().getComboBox().setFont(new Font("Tahoma", Font.PLAIN, 12));
+		calendar.setBounds(117, 182, 396, 380);
+		contentPanel_edit.add(calendar);
 		
 		
 		JLabel logolbl1 = new JLabel("");
