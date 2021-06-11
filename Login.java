@@ -1,4 +1,3 @@
-package erg1;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -23,10 +22,15 @@ import javax.swing.JTextPane;
 import java.awt.TextField;
 import javax.swing.JPasswordField;
 import java.awt.Font;
+import java.awt.Image;
 
-public class Login extends JFrame {
+public class login extends JFrame {
 	
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JPasswordField passwordField;
 
@@ -37,7 +41,7 @@ public class Login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login();
+					login frame = new login();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +51,7 @@ public class Login extends JFrame {
 	}
 
 	
-	public Login() {
+	public login() {
 		setBackground(Color.DARK_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 794, 501);
@@ -57,44 +61,55 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Button button = new Button("Log In");
-		button.setBounds(484, 276, 117, 44);
-		contentPane.add(button);
+		JLabel lbllogo = new JLabel("");
+		lbllogo.setIcon(new ImageIcon(login.class.getResource("/Biglogo.png")));
+		lbllogo.setBounds(179, 35, 473, 220);
+		contentPane.add(lbllogo);
 		
-		Button button_1 = new Button("Register");
-		button_1.setBounds(484, 338, 117, 44);
-		contentPane.add(button_1);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Login.class.getResource("/erg1/images/reservation+.png")));
-		lblNewLabel.setBounds(179, 50, 422, 178);
-		contentPane.add(lblNewLabel);
-		
-		TextField textField = new TextField();
-		textField.setBounds(179, 276, 138, 30);
-		contentPane.add(textField);
+		JTextField txtUsername = new JTextField();
+		txtUsername.setFont(new Font("Calibri", Font.PLAIN, 13));
+		txtUsername.setBounds(204, 276, 138, 35);
+		contentPane.add(txtUsername);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(179, 335, 138, 30);
+		passwordField.setToolTipText("");
+		passwordField.setBounds(204, 336, 138, 35);
 		contentPane.add(passwordField);
 		
-		JLabel lblNewLabel_1 = new JLabel("Username");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(179, 257, 94, 20);
+		JLabel lblNewLabel_1 = new JLabel("Username:");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(204, 258, 94, 20);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Password");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1.setBounds(179, 316, 94, 20);
+		JLabel lblNewLabel_1_1 = new JLabel("Password:");
+		lblNewLabel_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblNewLabel_1_1.setBounds(204, 321, 94, 20);
 		contentPane.add(lblNewLabel_1_1);
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
+		Button btnNewButton = new Button("Log in");
+		btnNewButton.setFont(new Font("Calibri", Font.BOLD, 14));
+		btnNewButton.setBounds(465, 276, 145, 35);
+		contentPane.add(btnNewButton);
+		
+		Button btnRegister = new Button("Register");
+		btnRegister.setFont(new Font("Calibri", Font.BOLD, 14));
+		btnRegister.setBounds(465, 336, 145, 35);
+		contentPane.add(btnRegister);
+		
+		JLabel passwordlbl = new JLabel("");
+		Image img= new ImageIcon(this.getClass().getResource("/password.png")).getImage();
+		passwordlbl.setIcon(new ImageIcon(img));
+		passwordlbl.setBounds(179, 342, 24, 24);
+		contentPane.add(passwordlbl);
+		
+		JLabel userlbl = new JLabel("");
+		Image img1= new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		userlbl.setIcon(new ImageIcon(img1));
+		userlbl.setBounds(180, 281, 24, 24);
+		contentPane.add(userlbl);
+		
+		
 	}
 }
-
