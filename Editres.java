@@ -1,3 +1,5 @@
+package erg1;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -48,6 +50,21 @@ public class Editres extends JFrame {
 		});
 	}
 
+	
+	public static void NewScreen() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Editres frame = new Editres();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	
 	/**
 	 * Create the frame.
 	 */
@@ -75,11 +92,13 @@ public class Editres extends JFrame {
 		label_edit_1.setBounds(669, 0, 355, 33);
 		contentPanel_edit.add(label_edit_1);
 		
+		
 		JCalendar calendar = new JCalendar();
 		calendar.getYearChooser().getSpinner().setFont(new Font("Tahoma", Font.PLAIN, 10));
 		calendar.getMonthChooser().getComboBox().setFont(new Font("Tahoma", Font.PLAIN, 12));
 		calendar.setBounds(117, 182, 396, 380);
 		contentPanel_edit.add(calendar);
+		
 		
 		Label label_edit_2 = new Label("Select Date :");
 		label_edit_2.setForeground(new Color(255, 255, 255));

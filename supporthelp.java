@@ -1,3 +1,5 @@
+package erg1;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -8,9 +10,15 @@ import java.awt.Panel;
 import java.awt.Label;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.TextArea;
 import javax.swing.JTextPane;
 import java.awt.Button;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JEditorPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class supporthelp extends JFrame {
 
@@ -31,24 +39,48 @@ public class supporthelp extends JFrame {
 			}
 		});
 	}
+	
+	
+	
+	public static void NewScreen() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					supporthelp frame = new supporthelp();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
 	 */
 	public supporthelp() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1250, 730);
+		setBounds(100, 100, 1000, 730);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Label WELCOME_label = new Label("welcome to reservation+");
-		WELCOME_label.setForeground(Color.WHITE);
-		WELCOME_label.setFont(new Font("Calibri", Font.BOLD, 15));
-		WELCOME_label.setBounds(10, 10, 274, 26);
-		contentPane.add(WELCOME_label);
+		Label welcome_label = new Label("Welcome to Reservation+");
+		welcome_label.setAlignment(Label.CENTER);
+		welcome_label.setFont(new Font("Calibri", Font.BOLD, 15));
+		welcome_label.setForeground(new Color(255, 255, 255));
+		welcome_label.setBackground(new Color(51, 51, 51));
+		welcome_label.setBounds(-69, 0, 337, 26);
+		contentPane.add(welcome_label);
+		
+		JLabel logolbl1 = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/Logo.png")).getImage();
+		logolbl1.setIcon(new ImageIcon(img));
+		logolbl1.setBounds(10, 37, 190, 64);
+		contentPane.add(logolbl1);
+		
 		
 		Label Support_label = new Label("Support-Help ");
 		Support_label.setForeground(Color.WHITE);
@@ -57,39 +89,62 @@ public class supporthelp extends JFrame {
 		Support_label.setBounds(572, 10, 654, 26);
 		contentPane.add(Support_label);
 		
-		JTextPane txtpnContactInfo = new JTextPane();
-		txtpnContactInfo.setFont(new Font("Calibri", Font.BOLD, 14));
-		txtpnContactInfo.setText("Contact info ");
-		txtpnContactInfo.setBounds(227, 189, 138, 26);
-		contentPane.add(txtpnContactInfo);
-		
-		JTextPane txtpnEmailReservationgmailcom = new JTextPane();
-		txtpnEmailReservationgmailcom.setFont(new Font("Calibri", Font.BOLD, 14));
-		txtpnEmailReservationgmailcom.setText("email : reservation+@gmail.com \r\ntelephone number : 2102333333");
-		txtpnEmailReservationgmailcom.setBounds(227, 215, 339, 43);
-		contentPane.add(txtpnEmailReservationgmailcom);
-		
-		JTextPane txtpnContactForm = new JTextPane();
-		txtpnContactForm.setText("Contact form ");
-		txtpnContactForm.setToolTipText("");
-		txtpnContactForm.setFont(new Font("Calibri", Font.BOLD, 15));
-		txtpnContactForm.setBounds(227, 305, 138, 26);
-		contentPane.add(txtpnContactForm);
-		
 		JTextPane txtpnNameRestaurants = new JTextPane();
-		txtpnNameRestaurants.setText("Name :\r\nrestaurant\"s name : \r\nType message : ");
-		txtpnNameRestaurants.setFont(new Font("Calibri", Font.BOLD, 14));
-		txtpnNameRestaurants.setBounds(227, 330, 639, 233);
+		txtpnNameRestaurants.setText("Your message....\r\n");
+		txtpnNameRestaurants.setFont(new Font("Calibri", Font.PLAIN, 14));
+		txtpnNameRestaurants.setBounds(219, 284, 639, 233);
 		contentPane.add(txtpnNameRestaurants);
 		
-		Button Back_button = new Button("SEND ");
-		Back_button.setFont(new Font("Calibri", Font.BOLD, 12));
-		Back_button.setBounds(1141, 639, 85, 44);
-		contentPane.add(Back_button);
-		
-		Button Send_message_button = new Button("BACK ");
+		Button Send_message_button = new Button("Back");
+		Send_message_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu1 mn = new Menu1();
+				mn.NewScreen();
+			}
+		});
 		Send_message_button.setFont(new Font("Calibri", Font.BOLD, 15));
 		Send_message_button.setBounds(10, 639, 85, 44);
 		contentPane.add(Send_message_button);
+		
+		JLabel lblNewLabel = new JLabel("Contac Info");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setBounds(219, 120, 113, 26);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("email : reservation+@gmail.com \r\ntelephone number : 2102333333");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(219, 145, 457, 35);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Contact form ");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBounds(219, 190, 143, 26);
+		contentPane.add(lblNewLabel_2);
+		
+		JEditorPane dtrpnName = new JEditorPane();
+		dtrpnName.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		dtrpnName.setText("Name\r\n\r\n");
+		dtrpnName.setBounds(219, 219, 151, 26);
+		contentPane.add(dtrpnName);
+		
+		JEditorPane dtrpnRestaurantName = new JEditorPane();
+		dtrpnRestaurantName.setText("Restaurant Name\r\n\r\n");
+		dtrpnRestaurantName.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		dtrpnRestaurantName.setBounds(219, 247, 151, 26);
+		contentPane.add(dtrpnRestaurantName);
+		
+		Button Back_button_1 = new Button("\u0391\u03C0\u03BF\u03C3\u03C4\u03BF\u03BB\u03AE ");
+		Back_button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu1 mn = new Menu1();
+				mn.NewScreen();
+			}
+		});
+		Back_button_1.setFont(new Font("Calibri", Font.BOLD, 12));
+		Back_button_1.setBounds(850, 614, 85, 44);
+		contentPane.add(Back_button_1);
 	}
 }

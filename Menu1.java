@@ -11,6 +11,8 @@ import java.awt.Color;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Panel;
 import java.awt.List;
@@ -31,11 +33,12 @@ import javax.swing.JToggleButton;
 import javax.swing.JLabel;
 import java.awt.TextField;
 import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.Image;
 
 public class Menu1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -45,6 +48,7 @@ public class Menu1 extends JFrame {
 			public void run() {
 				try {
 					Menu1 frame = new Menu1();
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,123 +57,268 @@ public class Menu1 extends JFrame {
 		});
 	}
 
+	
+	public static void NewScreen() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Menu1 frame = new Menu1();
+					
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	
+	
 	/**
 	 * Create the frame.
 	 */
 	public Menu1() {
 		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 731, 463);
+		setBounds(100, 100, 1000, 730);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		Label welcome_label = new Label("Welcome to Reservation+");
+		welcome_label.setAlignment(Label.CENTER);
+		welcome_label.setFont(new Font("Calibri", Font.BOLD, 15));
+		welcome_label.setForeground(new Color(255, 255, 255));
+		welcome_label.setBackground(new Color(51, 51, 51));
+		welcome_label.setBounds(-69, 0, 337, 26);
+		contentPane.add(welcome_label);
+		
+		JLabel logolbl1 = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/Logo.png")).getImage();
+		logolbl1.setIcon(new ImageIcon(img));
+		logolbl1.setBounds(23, 32, 191, 64);
+		contentPane.add(logolbl1);
+		
 		Button button_1 = new Button("102");
 		button_1.setBackground(new Color(0, 204, 0));
 		button_1.setBounds(53, 178, 70, 22);
 		contentPane.add(button_1);
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_2 = new Button("103");
 		button_2.setBackground(new Color(0, 204, 0));
 		button_2.setBounds(53, 247, 70, 22);
 		contentPane.add(button_2);
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_3 = new Button("104");
 		button_3.setBackground(new Color(0, 204, 0));
 		button_3.setBounds(168, 110, 70, 22);
 		contentPane.add(button_3);
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_4 = new Button("105");
 		button_4.setBackground(new Color(0, 204, 0));
 		button_4.setBounds(168, 178, 70, 22);
 		contentPane.add(button_4);
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_5 = new Button("106");
 		button_5.setBackground(new Color(0, 204, 0));
 		button_5.setBounds(168, 247, 70, 22);
 		contentPane.add(button_5);
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_6 = new Button("107");
 		button_6.setBackground(new Color(0, 204, 0));
 		button_6.setBounds(286, 110, 70, 22);
 		contentPane.add(button_6);
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_7 = new Button("108");
 		button_7.setBackground(new Color(255, 0, 0));
 		button_7.setBounds(286, 178, 70, 22);
 		contentPane.add(button_7);
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_8 = new Button("109");
 		button_8.setBackground(new Color(0, 204, 0));
 		button_8.setBounds(286, 247, 70, 22);
 		contentPane.add(button_8);
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_9 = new Button("110");
 		button_9.setBackground(new Color(0, 204, 0));
 		button_9.setBounds(381, 147, 70, 22);
 		contentPane.add(button_9);
+		button_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_10 = new Button("111");
 		button_10.setBackground(new Color(255, 0, 0));
-		button_10.setBounds(381, 214, 70, 22);
+		button_10.setBounds(381, 198, 70, 22);
 		contentPane.add(button_10);
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_11 = new Button("112");
 		button_11.setBackground(new Color(0, 204, 0));
-		button_11.setBounds(476, 147, 70, 22);
+		button_11.setBounds(457, 147, 70, 22);
 		contentPane.add(button_11);
+		button_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button_12 = new Button("113");
 		button_12.setBackground(new Color(0, 204, 0));
-		button_12.setBounds(476, 214, 70, 22);
+		button_12.setBounds(457, 198, 70, 22);
 		contentPane.add(button_12);
+		button_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
+			}
+		});
 		
 		Button button = new Button("101");
 		button.setBackground(new Color(255, 0, 0));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
+				
 			}
 		});
 		button.setBounds(53, 110, 70, 22);
 		contentPane.add(button);
 		
-		Button button_13 = new Button("Επεξεργασία κράτησης");
+		Button button_13 = new Button("Reservations Edit");
 		button_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Editres editres = new Editres();
+				editres.NewScreen();
+				
 			}
 		});
 		button_13.setBounds(566, 89, 126, 22);
 		contentPane.add(button_13);
 		
-		Button button_13_1 = new Button("New button");
-		button_13_1.setBounds(622, 198, 70, 22);
+		Button button_13_1 = new Button("Support");
+		button_13_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				supporthelp sphelp = new supporthelp();
+				sphelp.NewScreen();
+				
+			}
+		});
+		button_13_1.setBounds(566, 198, 126, 22);
 		contentPane.add(button_13_1);
 		
-		Button button_13_2 = new Button("New button");
-		button_13_2.setBounds(622, 134, 70, 22);
+		Button button_13_2 = new Button("Edit Profil");
+		button_13_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editprofile editpro = new editprofile();
+				editpro.NewScreen();
+			}
+		});
+		button_13_2.setBounds(566, 134, 126, 22);
 		contentPane.add(button_13_2);
 		
-		Button button_13_3 = new Button("New button");
+		Button button_13_3 = new Button("Create Space");
 		button_13_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_13_3.setBounds(622, 158, 70, 22);
+		button_13_3.setBounds(566, 158, 126, 22);
 		contentPane.add(button_13_3);
 		
-		Button button_13_4 = new Button("New button");
-		button_13_4.setBounds(622, 178, 70, 22);
+		Button button_13_4 = new Button("Timeline");
+		button_13_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_13_4.setBounds(566, 178, 126, 22);
 		contentPane.add(button_13_4);
 		
-		Button button_13_5 = new Button("New button");
-		button_13_5.setBounds(622, 214, 70, 22);
+		Button button_13_5 = new Button("Clear");
+		button_13_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_13_5.setBounds(566, 218, 126, 22);
 		contentPane.add(button_13_5);
 		
-		Button button_13_6 = new Button("Δημιουργία κράτησης");
+		Button button_13_6 = new Button("Create Reservation");
 		button_13_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				createres crt = new createres();
+				crt.NewScreen();
 			}
 		});
 		button_13_6.setBounds(566, 68, 126, 22);
@@ -180,18 +329,42 @@ public class Menu1 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_14.setBounds(669, 110, 36, 22);
+		button_14.setBounds(669, 110, 21, 22);
 		contentPane.add(button_14);
 		
 		TextField textField = new TextField();
-		textField.setText("\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7");
+		textField.setText("Search\r\n");
 		textField.setBounds(566, 110, 102, 22);
 		contentPane.add(textField);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(152, 38, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		Button button_13_5_1 = new Button("Select plan ");
+		button_13_5_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_13_5_1.setBounds(566, 239, 126, 22);
+		contentPane.add(button_13_5_1);
+		
+		Button button_13_5_2 = new Button("Log out");
+		button_13_5_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login login = new Login();
+				login.NewScreen();
+		
+				
+			
+			
+			}
+		});
+		button_13_5_2.setBounds(566, 261, 126, 22);
+		contentPane.add(button_13_5_2);
+		
+		Label label_edit_1 = new Label("Menu");
+		label_edit_1.setFont(new Font("Calibri", Font.BOLD, 15));
+		label_edit_1.setForeground(new Color(255, 255, 255));
+		label_edit_1.setAlignment(Label.CENTER);
+		label_edit_1.setBounds(442, 32, 355, 33);
+		contentPane.add(label_edit_1);
 	}
 }
 

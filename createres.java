@@ -1,3 +1,6 @@
+package erg1;
+
+
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.EventQueue;
@@ -14,9 +17,10 @@ import java.awt.Font;
 import java.awt.TextField;
 import javax.swing.border.LineBorder;
 import java.awt.Button;
-import com.toedter.calendar.JDateChooser;
-import com.toedter.calendar.JCalendar;
+
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class createres extends JFrame {
 
@@ -26,6 +30,19 @@ public class createres extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					createres frame = new createres();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public static void NewScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -104,6 +121,12 @@ public class createres extends JFrame {
 		contentPane.add(textTable_5);
 		
 		Button createres_button = new Button("Create Reservation");
+		createres_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu1 mn = new Menu1();
+				mn.NewScreen();
+			}
+		});
 		createres_button.setBackground(Color.LIGHT_GRAY);
 		createres_button.setForeground(Color.BLACK);
 		createres_button.setFont(new Font("Calibri", Font.BOLD, 13));
@@ -159,9 +182,7 @@ public class createres extends JFrame {
 		label.setBounds(98, 162, 159, 21);
 		contentPane.add(label);
 		
-		JCalendar calendar = new JCalendar();
-		calendar.setBounds(98, 189, 407, 350);
-		contentPane.add(calendar);
+	
 		
 		
 		JLabel logolbl1 = new JLabel("");
@@ -207,4 +228,3 @@ public class createres extends JFrame {
 		contentPane.add(commentslbl);
 	}
 }
-
